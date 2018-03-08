@@ -1,4 +1,8 @@
 # Beginning-Vue.js
+
+Code bundles for Beginning Vue.js, published by Packt.
+
+Code Bundles for Courseware on Beginning Vue.js- Andrea Passaglia
 Vue.js is an open source JavaScript library for building modern, interactive web applications. 
 With a rapidly growing community and a strong ecosystem, Vue.js makes developing complex single page applications a breeze. 
 Its component-based approach, intuitive API, blazing fast core, and compact size make Vue.js a great solution to craft your next front-end application.
