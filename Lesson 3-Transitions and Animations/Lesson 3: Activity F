@@ -1,0 +1,37 @@
+HTML
+
+<div id="app"> 
+  <button @click="curAd++">next</button> 
+  <transition name="fade" mode="out-in"> 
+    <img :key="ads[curAd % 4]" :src="ads[curAd % 4]" /> 
+  </transition> 
+</div> 
+
+---------------------------------------
+CSS
+
+.fade-enter-active, 
+.fade-leave-active { 
+  transition: opacity .5s 
+} 
+.fade-enter, 
+.fade-leave-to { 
+  opacity: 0 
+} 
+
+-------------------------------------------
+JS and Vue
+
+new Vue({ 
+  el: '#app', 
+  data: { 
+    curAd: 0, 
+    ads: ['https://placeimg.com/400/150/any?1', 
+      'https://placeimg.com/400/150/any?2', 
+      'https://placeimg.com/400/150/any?3', 
+      'https://placeimg.com/400/150/any?4' 
+    ] 
+  } 
+}) 
+
+https://jsfiddle.net/gurghet/n42cp6ec/
