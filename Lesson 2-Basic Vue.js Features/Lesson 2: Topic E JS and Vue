@@ -1,0 +1,11 @@
+Vue.filter('date', function (date) { 
+  return moment(date).format('LL') 
+}) 
+new Vue({
+  el: '#app',
+  data: {
+    bastilleStormingDate: '1789-07-14 17'
+  }
+})
+
+https://jsfiddle.net/gurghet/gc82n0vc/
