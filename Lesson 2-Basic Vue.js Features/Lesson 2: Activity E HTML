@@ -1,0 +1,3 @@
+<div id="app">
+La prise de la Bastille, survenue le {{bastilleStormingDate | date('fr')}}
+</div>
