@@ -1,0 +1,12 @@
+Vue.filter('date', function(date, locale) {
+  moment.locale(locale)
+  return moment(date).format('LL')
+})
+new Vue({
+  el: '#app',
+  data: {
+    bastilleStormingDate: '1789-07-14 17'
+  }
+})
+
+https://jsfiddle.net/gurghet/afjgcyoL/
