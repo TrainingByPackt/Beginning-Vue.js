@@ -1,0 +1,23 @@
+ new Vue({
+   el: '#app',
+   data: {
+     kelvin: 0
+   },
+   computed: {
+     celsius: {
+       get() {
+         return this.kelvin - 273
+       },
+       set(newCelsius) {
+         this.kelvin = newCelsius + 273
+       }
+     }
+   },
+   methods: {
+     updateCelsius(e) {
+       this.celsius = Number(e.target.value)
+     }
+   }
+ })
+ 
+ https://jsfiddle.net/gurghet/gxee4zn8/
