@@ -1,0 +1,16 @@
+Vue.filter('dollars', function (money) { 
+  return accounting.formatMoney(money) 
+}) 
+new Vue({ 
+  el:'#app', 
+  data: { 
+    inventory: [ 
+      {name: 'tape measure', price: '7'}, 
+      {name: 'stamp', price: '0.01'}, 
+      {name: 'shark tooth', price: '1.5'}, 
+      {name: 'iphone', price: '999'} 
+    ] 
+  } 
+}) 
+
+https://jsfiddle.net/gurghet/xg4eg08y/
