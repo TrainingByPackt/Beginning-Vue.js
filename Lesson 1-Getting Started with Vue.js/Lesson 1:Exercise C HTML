@@ -1,0 +1,6 @@
+<div id="app">
+  <ul>
+    <li v-for="n in countdown">{{n}}</li>
+    <li>{{ countdown.length === 10 ? 'launch missile!' : '...' }}</li>
+  </ul>
+</div>
