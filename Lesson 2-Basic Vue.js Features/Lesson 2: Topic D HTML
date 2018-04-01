@@ -1,0 +1,3 @@
+<div id="app">
+  I have {{5 | currency}} in my pocket
+</div>
