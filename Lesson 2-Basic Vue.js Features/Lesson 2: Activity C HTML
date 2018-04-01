@@ -1,0 +1,19 @@
+<div id="app">
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th :class="order === 1 ? 'descending' : 'ascending'"
+          @click="sort">Electricity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="dam in damsByElectricity">
+      <td>{{dam.name}}</td>
+      <td>{{dam.country}}</td>
+      <td>{{dam.electricity}} MegaWatts</td>
+    </tr>
+  </tbody>
+</table>
+</div>
