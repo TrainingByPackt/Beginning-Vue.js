@@ -1,0 +1,14 @@
+new Vue({ 
+  el: '#app', 
+  data: { 
+    bullets: 0 
+  }, 
+  computed: { 
+    myProperty () { 
+      alert('hi') 
+      return 'new Bullet' 
+    } 
+  } 
+}) 
+
+https://jsfiddle.net/gurghet/uq9cL7pj/
