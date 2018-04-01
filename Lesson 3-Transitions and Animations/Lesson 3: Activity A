@@ -1,0 +1,21 @@
+HTML
+
+<div id="app"> 
+ <transition enter-active-class="animated fadeInUp"> 
+   <p v-if="newCommentShow"> 
+     This is a new comment to your blog 
+   </p> 
+ </transition> 
+</div> 
+
+---------------------------------
+JS and Vue
+
+const vm = new Vue({ 
+  el: '#app', 
+  data: { 
+    newCommentShow: false 
+  } 
+}) 
+ 
+setTimeout(() => vm.newCommentShow = true, 3000) 
