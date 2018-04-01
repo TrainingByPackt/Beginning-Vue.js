@@ -1,0 +1,13 @@
+<div id="app">
+  <label>Kelvin: 
+    <input v-model="kelvin" type="range" min="0" max="1000"> 
+  </label>
+  <br>
+  <label>Celsius: 
+    <input @input="updateCelsius" :value="celsius"> 
+  </label>
+  <br>
+  <output>
+    The temperature is {{kelvin}}K ({{celsius}}C) 
+  </output>
+</div>
