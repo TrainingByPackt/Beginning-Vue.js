@@ -1,0 +1,30 @@
+HTML
+
+<div id="app">
+
+  <form>
+    <fieldset>
+      <legend>Choose your country</legend>
+      <select v-model="choosenCountry"> 
+        <option>Japan</option> 
+        <option>India</option> 
+        <option>Canada</option> 
+      </select>
+    </fieldset>
+  </form>
+  <div>
+
+    {{choosenCountry}}
+
+  </div>
+</div>
+---------------------------------------
+JS and Vue
+
+new Vue({
+  el: '#app',
+  data: {
+    choosenCountry: undefined
+  }
+})
+
