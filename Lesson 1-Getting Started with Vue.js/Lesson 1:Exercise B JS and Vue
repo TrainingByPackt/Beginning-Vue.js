@@ -1,0 +1,11 @@
+new Vue({
+  el: '#app',
+  data: {
+    house: {
+      entrance: 4,
+      'living room': 15,
+      bathroom: 7,
+      bedroom: 12
+    }
+  }
+})
