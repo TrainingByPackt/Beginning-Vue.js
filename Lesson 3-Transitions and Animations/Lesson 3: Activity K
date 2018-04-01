@@ -1,0 +1,30 @@
+HTML
+
+<div id="app"> 
+ <transition :enter-active-class="transitionIn"> 
+   <h3 v-if="show"> 
+     Hello World 
+   </h3> 
+ </transition> 
+ <button @click="show = !show"> 
+   Toggle 
+ </button> 
+ <label>Transition in:</label> 
+ <select v-model="transitionIn"> 
+   <option value="fadeIn animated">fade</option> 
+   <option value="bounceIn animated">bounce</option> 
+ </select> 
+</div> 
+
+-----------------------------------
+JS and Vue
+
+new Vue({ 
+  el: '#app', 
+  data: { 
+    transitionIn: 'fadeIn animated', 
+    show: false 
+  } 
+}) 
+
+https://jsfiddle.net/gurghet/ndhoufuh/
