@@ -1,0 +1,10 @@
+new Vue({
+  el: '#app',
+  data: {
+    numBees: 5,
+    numBeets: 1,
+    numBeers: 3
+  }
+})
+
+https://jsfiddle.net/gurghet/cb4dxdj9/
