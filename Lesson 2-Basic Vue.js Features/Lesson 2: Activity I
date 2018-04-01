@@ -1,0 +1,19 @@
+HTML
+
+<div id="app">
+  <input v-model="rawHtml" /><br/>
+  <span v-html="rawHtml"> 
+</span>
+</div>
+
+-----------------------------
+JS and Vue
+
+new Vue({
+  el: '#app',
+  data: {
+    rawHtml: ''
+  }
+})
+
+https://jsfiddle.net/gurghet/ks8afbfu/
