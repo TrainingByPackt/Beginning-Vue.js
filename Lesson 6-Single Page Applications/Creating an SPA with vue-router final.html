@@ -1,0 +1,17 @@
+<div id="app">
+  <h1>Choppy's Restaurant</h1>
+  <ul>
+    <li>
+      <router-link to="/">Home</router-link>
+    </li>
+    <li>
+      <router-link to="/menu">Menu</router-link>
+    </li>
+    <li>
+      <router-link tag="li" to="/bar" :event="['mousedown', 'touchstart']">
+        <a>Bar</a>
+      </router-link>
+    </li>
+  </ul>
+  <router-view></router-view>
+</div>
