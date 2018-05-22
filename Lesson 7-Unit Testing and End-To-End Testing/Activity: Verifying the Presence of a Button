@@ -1,0 +1,21 @@
+HTML Section
+
+<div id="app"></div>
+
+------------------------------
+JavaScript Section
+
+describe('my app', () => {
+  let vm
+  beforeEach(() => {
+    vm = new Vue({
+      template: '<button>Buzz</button>'
+    }).$mount('#app')
+  })
+  it('should have a button', () => {
+    expect(vm.$el.querySelector('button')).toBeDefined()
+  })
+})
+
+
+URL: https://jsfiddle.net/packt/63x29cz8
