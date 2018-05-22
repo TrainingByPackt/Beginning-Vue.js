@@ -1,0 +1,12 @@
+JavaScript section
+
+new Vue({el:'#app'})
+
+
+-------------------------------------
+HTML Section
+
+<div id="app">
+{{'Hello ' + 'world'}}
+</div>
+
