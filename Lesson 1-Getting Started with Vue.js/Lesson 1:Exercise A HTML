@@ -1,4 +1,0 @@
-<div id="app">
-{{numBees}} bee{{numBees == 1 ? '' : 's'}} are feeding on {{numBeets}} beet{{numBeets == 1 ? '' : 's'}} and
-{{numBeers}} beer{{numBeers == 1 ? '' : 's'}}.
-</div>

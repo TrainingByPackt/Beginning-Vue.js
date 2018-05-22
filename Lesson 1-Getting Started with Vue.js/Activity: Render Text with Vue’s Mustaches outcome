@@ -1,0 +1,21 @@
+HTML Section
+
+<div id="app">
+{{numBees}} bee{{numBees == 1 ? '' : 's'}} are feeding on {{numBeets}} beet{{numBeets == 1 ? '' : 's'}} and
+{{numBeers}} beer{{numBeers == 1 ? '' : 's'}}.
+</div>
+
+
+-------------------------------
+JavaScript Section
+new Vue({
+  el: '#app',
+  data: {
+    numBees: 5,
+    numBeets: 1,
+    numBeers: 3
+  }
+})
+
+
+URL: https://jsfiddle.net/packt/h4pz8w1o/
