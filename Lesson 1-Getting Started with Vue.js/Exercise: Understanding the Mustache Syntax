@@ -1,0 +1,21 @@
+HTML Section
+
+We conquered 5 planets.<br/>
+{{'Hello ' + 5 + ' worlds'}}
+
+----------------------------------
+We conquered {{5 + 2}} planets.<br/>
+Hello {{5 + 2}} worlds
+
+
+----------------------------------
+<div id="app">
+We conquered {{countWorlds}} planets.<br/>
+Hello {{countWorlds}} worlds
+</div>
+new Vue({
+el:'#app',
+data: {
+countWorlds: 5 + 2
+}
+})
