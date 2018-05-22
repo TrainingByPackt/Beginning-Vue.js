@@ -1,0 +1,59 @@
+HTML Section
+
+<div id="app">
+  <button @click="retrieve">Retrieve Post</button>
+  <p v-if="post">{{post}}</p>
+</div>
+
+------------------------------
+JavaScript
+
+function newVm() {
+  return new Vue({
+    el: '#app',
+    data: {
+      post: undefined
+    },
+    methods: {
+      retrieve() {
+        axios
+          .get('https://jsonplaceholder.typicode.com/posts/1')
+          .then(response => {
+            console.log('setting post')
+            this.post = response.data.body
+          })
+      }
+    }
+  })
+}
+
+let vm = newVm()
+
+describe('my app', () => {
+  let sandbox
+  beforeEach(() => {
+    sandbox = sinon.sandbox.create()
+		vm = newVm()
+  })
+  afterEach(() => sandbox.restore())
+  it('should save the returned post body', done => {
+    const promise = new Promise(resolve =>
+      resolve({
+        data: {
+          body: 'Hello World'
+        }
+      })
+    )
+    sandbox.stub(axios, 'get').returns(promise)
+    vm.retrieve()
+    promise.then(() => {
+      expect(vm.post).toEqual('Hello World')
+      done()
+    })
+  })
+  it('should initially not display text', () => {
+    expect(vm.$el.querySelector('p')).toBeNull()
+  })
+})
+
+URL: https://jsfiddle.net/wyp1fzqx
