@@ -1,0 +1,22 @@
+HTML Section
+
+<div id="app">
+  {{'hello world' | uppercase }}
+</div>
+
+------------------------------
+JavaScript
+
+Vue.filter('capitalize', function(string) {
+  var capitalFirst = string.charAt(0).toUpperCase()
+  var noCaseTail = string.slice(1, string.length)
+  return capitalFirst + noCaseTail
+})
+Vue.filter('uppercase', function (string) { 
+  return string.toUpperCase() 
+}) 
+new Vue({
+  el: '#app'
+})
+
+URL: https://jsfiddle.net/packt/w2kL9xw0/
