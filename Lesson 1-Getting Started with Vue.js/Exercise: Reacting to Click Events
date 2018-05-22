@@ -1,0 +1,13 @@
+HTML Section
+
+<div id="app">
+<button v-on:click="toast">Toast bread</button>
+</div>
+
+
+------------------------------
+JavaScript
+
+new Vue({el:'#app', methods:{toast(){alert('Tosted!')}}})
+
+URL: https://jsfiddle.net/packt/171o9Lw7/
