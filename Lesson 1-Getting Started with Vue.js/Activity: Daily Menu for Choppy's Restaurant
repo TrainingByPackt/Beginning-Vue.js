@@ -1,0 +1,29 @@
+HTML Section
+
+<h2>
+Choppy’s Restaurant Daily Specials
+</h2>
+<div id="app">
+  <ul>
+    <li v-for="(dish, i) in dishes">
+      {{dish}}
+      <button v-on:click="dishes.splice(i, 1)">Delete</button>
+    </li>
+  </ul>
+  <input v-model="newDish" />
+  <button v-on:click="dishes.push(newDish)">Add</button>
+</div>
+
+------------------------------
+JavaScript
+
+new Vue({
+  el: '#app',
+  data: {
+    dishes: [],
+    newDish: ''
+  }
+})
+
+
+URL: https://jsfiddle.net/packt/2cymjdqq/
