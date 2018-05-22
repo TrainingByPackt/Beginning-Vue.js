@@ -1,0 +1,24 @@
+HTML Section
+
+<ul>
+<li v-for="n in [10,9,8,7,6,5,4,3,2,1]">{{n}}</li>
+<li>launch missile!</li>
+</ul>
+
+<ul>
+<li v-for="n in countdown">{{n}}</li>
+<li>launch missile!</li>
+</ul>
+
+
+------------------------------
+JavaScript
+
+new Vue({
+el:'#app',
+data: {
+countdown: [10,9,8,7,6,5,4,3,2,1]
+}
+})
+
+URL: https://jsfiddle.net/packt/ggq7kczp/
