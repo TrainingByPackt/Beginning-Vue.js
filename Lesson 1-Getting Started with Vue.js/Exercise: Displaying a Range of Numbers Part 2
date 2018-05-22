@@ -1,0 +1,16 @@
+HTML Section
+
+<div id="app">
+<ul>
+<li v-for="n in 10">{{11-n}}</li>
+<li>launch missile!</li>
+</ul>
+</div>
+
+
+------------------------------
+JavaScript
+
+new Vue({el:'#app'})
+
+URL: https://jsfiddle.net/packt/1xbvd71f/
