@@ -1,9 +1,0 @@
-new Vue({
-  el: '#app',
-  data: {
-    worlds: ['Terran', 'L24-D', 'Ares', 'New Kroy', 'Sebek', 'Vestra'],
-    newWorld: ''
-  }
-})
-
-https://jsfiddle.net/gurghet/wmq1xr69/
