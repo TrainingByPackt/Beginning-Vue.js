@@ -1,0 +1,22 @@
+HTML Section
+
+<div id="app">
+<ul>
+<li v-for="(sound, name) in animals">
+The {{name}} goes {{sound}}
+</li>
+</ul>
+</div>
+
+------------------------------
+JavaScript
+
+new Vue({
+el: '#app',
+data: {
+animals: {
+dog: 'woof', cat: 'meow', bird: 'tweet'
+}
+
+
+URL: https://jsfiddle.net/packt/mbs5mh1g/
