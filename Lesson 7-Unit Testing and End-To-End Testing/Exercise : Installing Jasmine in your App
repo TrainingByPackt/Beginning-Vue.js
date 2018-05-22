@@ -1,0 +1,17 @@
+HTML Section
+
+<div id="app">
+<p>{{greeting}}</p>
+</div>
+
+------------------------------
+JavaScript
+
+new Vue({
+el: '#app',
+data: {
+greeting: 'Hello World!'
+}
+})
+
+URL: https://jsfiddle.net/packt/eda7a182/
