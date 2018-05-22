@@ -1,0 +1,27 @@
+HTML Section
+
+<div id="app">
+  <ul>
+    <li v-for="(world, i) in worlds">
+      {{world}}
+      <button v-on:click="worlds.splice(i, 1)">Zap!</button>
+    </li>
+  </ul>
+  <input v-model="newWorld" />
+  <button v-on:click="worlds.push(newWorld)">Conquer</button>
+{{worlds}}
+{{newworld}}
+</div>
+
+------------------------------
+JavaScript
+
+new Vue({
+  el: '#app',
+  data: {
+    worlds: ['Terran', 'L24-D', 'Ares', 'New Kroy', 'Sebek', 'Vestra'],
+    newWorld: ''
+  }
+})
+
+URL: https://jsfiddle.net/packt/tkdLmyqo/ 
