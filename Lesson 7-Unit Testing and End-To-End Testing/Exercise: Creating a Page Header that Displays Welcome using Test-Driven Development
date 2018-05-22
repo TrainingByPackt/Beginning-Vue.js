@@ -1,0 +1,31 @@
+
+HTML Section
+
+<div id="app">
+  <p>{{greeting}}</p>
+</div>
+
+
+------------------------------
+JavaScript
+
+new Vue({
+  el: '#app',
+  data: {
+    greeting: 'Hello World!'
+  }
+})
+
+describe('my app', () => {
+  it('should say Hello World', () => {
+    expect(document.querySelector('p').innerText)
+      .toContain('Hello World')
+  })
+  it('should have an header that says `Welcome`', () => {
+    expect(document.querySelector('h1').innerText)
+      .toContain('Welcome')
+  })
+})
+
+
+URL: https://jsfiddle.net/packt/0ohf1j4b/
