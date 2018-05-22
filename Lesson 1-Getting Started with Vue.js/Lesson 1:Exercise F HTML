@@ -1,3 +1,0 @@
-<div id="app">
-  {{'hello world' | uppercase }}
-</div>
