@@ -1,0 +1,31 @@
+HTML Section
+
+<div id="app">
+  <h3>
+    My dream house
+  </h3>
+  <ul>
+    <li v-for="(size, room) in house">
+      {{room}}: {{size}} sq.mt.
+    </li>
+  </ul>
+</div>
+
+
+------------------------------
+JavaScript
+
+new Vue({
+  el: '#app',
+  data: {
+    house: {
+      entrance: 4,
+      'living room': 15,
+      bathroom: 7,
+      bedroom: 12
+    }
+  }
+})
+
+
+URL: https://jsfiddle.net/packt/mbs5mh1g/
