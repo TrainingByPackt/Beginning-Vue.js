@@ -1,0 +1,42 @@
+HTML Section
+
+<div id="app">
+  <button @click="toast">
+  Toast!
+  </button>
+  <output>
+    {{result}}
+  </output>
+</div>
+
+------------------------------
+JavaScript
+
+describe('my app', () => {
+  let vm
+  beforeEach(() => {
+    vm = new Vue({
+      el: '#app',
+      data: {
+        result: ''
+      },
+      methods: {
+        toast () {
+          this.result += '🍞'
+        }
+      }
+    })
+  })
+  it('should display 🍞 every time the button is clicked', done => {
+    const buttonEl = vm.$el.querySelector('button')
+    const outputEl = vm.$el.querySelector('output')
+    buttonEl.dispatchEvent(new Event('click'))
+    expect(outputEl.textContent.trim()).toEqual('')
+    vm.$nextTick(() => {
+      expect(outputEl.textContent.trim()).toEqual('🍞')
+      done()
+    })
+  })
+})
+
+URL: https://jsfiddle.net/packt/0by6e3h3/
