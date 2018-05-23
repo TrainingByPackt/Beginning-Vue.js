@@ -1,6 +1,3 @@
-var webpackConfig = merge(baseWebpackConfig, {
-entry: {
-app: './src/dist.js'
-},
-module: {
-...
+import Vue from 'vue'
+import Shaker from './Shaker'
+Vue.component('shaker', Shaker)
