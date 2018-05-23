@@ -1,0 +1,42 @@
+HTML Section
+
+<div id="app">
+  <h1>Nano TV</h1>
+  <ul>
+    <li>
+      <router-link to="/">Home</router-link>
+    </li>
+    <li>
+      <router-link to="/sports">Sports</router-link>
+    </li>
+    <li>
+      <router-link to="/animals">Animals</router-link>
+    </li>
+  </ul>
+  <router-view></router-view>
+</div>
+
+------------------------------------------
+
+Javascript+Vue(edge)
+
+Vue.use(VueRouter)
+
+const Home = { template: '<div>Welcome to our TV Network</div>' }
+const Sports = { template: '<video autoplay loop src="//ungern.webm.xyz/59c796326b888b0010a0fc17.mp4"/>' }
+const Animals = { template: '<video autoplay loop src="//ungern.webm.xyz/5a1f44de42e44c001009336c.mp4"/>' }
+
+const router = new VueRouter({
+	routes: [
+		{ path: '/', component: Home },
+		{ path: '/sports', component: Sports },
+		{ path: '/animals', component: Animals }
+	]
+})
+
+new Vue({
+	router,
+	el: '#app'
+})
+
+URL: https://jsfiddle.net/packt/033gqjkg/
