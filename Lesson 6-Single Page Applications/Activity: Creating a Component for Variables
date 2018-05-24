@@ -1,0 +1,49 @@
+HTML Section
+
+<div id="app">
+  <ul>
+    <li>
+      <router-link to="/" exact>Home</router-link>
+    </li>
+    <li>
+      <router-link to="/time">Time</router-link>
+    </li>
+  </ul>
+  <router-view></router-view>
+</div>
+
+---------------------------------------------------
+JavaScript+Vue(edge)
+
+Vue.use(VueRouter)
+
+const Home = {
+  template: '<div>This is my home page</div>'
+}
+const Time = {
+  template: `<div>This page was loaded at {{time}}</div>`,
+  data() {
+    return {
+      time: undefined
+    }
+  },
+  beforeRouteEnter(to, from, next) {
+    next(vm =>
+    	vm.time = (new Date()).toLocaleString()
+    )
+  }
+}
+
+const router = new VueRouter({
+  routes: [
+  	{ path: '/', component: Home },
+  	{ path: '/time', component: Time },
+  ]
+})
+
+new Vue({
+  router,
+  el: '#app'
+})
+
+URL: https://jsfiddle.net/packt/u7shyfhv/
