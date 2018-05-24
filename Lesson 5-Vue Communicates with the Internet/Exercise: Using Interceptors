@@ -1,0 +1,41 @@
+HTML Section  
+
+<div id="app">
+  <h3>Who's better: Socrates or Plato?</h3>
+  <p>Technically, without Plato we wouldn't have<br> much to go on when it comes to information about<br> Socrates. Plato ftw!</p>
+  <form>
+    <label>Write your comment:</label>
+    <textarea v-model="message"></textarea>
+    <button @click.prevent="submit">Send!</button>
+  </form>
+  <p>Server got: {{response}}</p>
+</div>
+
+------------------------------
+JavaScript + Vue Section 
+
+new Vue({
+  el: '#app',
+  data: {
+    message: '',
+    response: '...'
+  },
+  methods: {
+    submit() {
+      axios.post('https://jsonplaceholder.typicode.com/comments', {
+        body: this.message
+      }).then(response => {
+        this.response = response.data
+      })
+    }
+  },
+  mounted() {
+    axios.interceptors.request.use(config => {
+      const body = config.data.body.replace(/punk/i, '***')
+      config.data.body = body
+      return config
+    })
+  }
+})
+
+URL:https://jsfiddle.net/packt/ae1wvspq/
