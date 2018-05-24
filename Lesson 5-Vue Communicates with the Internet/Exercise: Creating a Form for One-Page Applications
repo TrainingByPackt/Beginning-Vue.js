@@ -9,8 +9,9 @@ HTML Section
   </form> 
   <output>{{CHFrate}}</output> 
 </div> 
-
+------------------------------
 JavaScript + Vue Section 
+
 new Vue({ 
   el: '#app', 
   data: { 
