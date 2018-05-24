@@ -1,0 +1,85 @@
+HTML Section 
+
+<div id="app">
+  <h1>My Portfolio</h1>
+  <ul>
+    <li>
+      <router-link to="/" exact>Home</router-link>
+    </li>
+    <li>
+      <router-link to="/aboutme">About Me</router-link>
+    </li>
+  </ul>
+  <router-view></router-view>
+  <div class="toast" v-show="showError">
+    There was an error: {{errorMessage}}
+  </div>
+</div>
+
+----------------------------------
+JavaScript + Vue Section
+
+let vm
+
+Vue.use(VueRouter)
+
+const Home = {
+  template: '<div>This is my home page</div>'
+}
+const AboutMe = {
+  template: `<div>Name:{{name}}<br>Phone:{{phone}}</div>`,
+  data() {
+    return {
+      name: undefined,
+      phone: undefined
+    }
+  },
+  beforeRouteEnter(to, from, next) {
+    axios.post('http://example.com/', {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "ipsum": "name"
+        },
+        "phone": {
+          "type": "string",
+          "format": "phone"
+        }
+      }
+    }).then(response => {
+      next(vm => {
+        vm.name = response.data.name
+        vm.phone = response.data.phone
+      })
+    }).catch(error => {
+      vm.showError = true
+      vm.errorMessage = error.message
+      setTimeout(() => vm.showError = false, 3000);
+      next(false)
+    })
+  }
+}
+
+const router = new VueRouter({
+  routes: [{
+      path: '/',
+      component: Home
+    },
+    {
+      path: '/aboutme',
+      component: AboutMe
+    },
+  ]
+})
+
+vm = new Vue({
+  router,
+  el: '#app',
+  data: {
+    showError: false,
+    errorMessage: undefined
+  }
+})
+
+URL: https://jsfiddle.net/packt/pes2q2br/
