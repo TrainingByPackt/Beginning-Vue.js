@@ -1,0 +1,34 @@
+HTML Section  
+
+<div id="app">
+  {{temp}}
+</div>
+
+------------------------------
+JavaScript + Vue Section 
+
+function getRandomInt(min, max) { 
+    return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
+function getTemp(vm, trialCount) { 
+  const delay = getRandomInt(1, 4)
+    axios.get('https://httpbin.org/delay/'+delay+'?temperature=23', {timeout: 2000}) 
+    .then(response => { 
+      vm.temp = response.data.args.temperature 
+    }) 
+    .catch(error => { 
+      vm.temp = 'retrying... (' + trialCount + ')' 
+      getTemp(vm, trialCount + 1) 
+    })
+}
+new Vue({ 
+  el: '#app', 
+  data: { 
+   temp: 'connecting...' 
+  }, 
+  created () { 
+    getTemp(this, 1) 
+  } 
+}) 
+
+URL:https://jsfiddle.net/packt/g8rtq534/
