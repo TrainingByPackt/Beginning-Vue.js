@@ -1,0 +1,31 @@
+HTML Section  
+
+<div id="app">
+<form @submit.prevent="vueSubmit">
+<div>
+<label>Name</label>
+<input type="text" required>
+</div>
+<div>
+<label>Email</label>
+<input type="email" required>
+</div>
+<div>
+<label>Submit</label>
+<button type="submit">Submit</button>
+</div>
+
+---------------------------------------
+JavaScript + Vue Section 
+
+new Vue({
+el: '#app',
+methods: {
+vueSubmit() {
+console.info('fake AJAX request')
+}
+}
+})
+
+
+URL:https://jsfiddle.net/packt/d4a9067j/ 
