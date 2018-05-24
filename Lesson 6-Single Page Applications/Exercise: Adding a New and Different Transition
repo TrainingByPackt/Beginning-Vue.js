@@ -1,0 +1,77 @@
+HTML Section 
+
+<div id="app">
+  <h1>Ghost's Restaurant</h1>
+  <ul>
+    <li>
+      <router-link to="/">Home</router-link>
+    </li>
+    <li>
+      <router-link to="/menu">Menu</router-link>
+    </li>
+  </ul>
+    <router-view></router-view>
+</div>
+
+-----------------------------------------------
+JavaScript + Vue Section
+
+Vue.use(VueRouter)
+
+const Home = { template: `
+<transition name="spooky">
+<div>Welcome to Ghost's</div>
+</transition>
+` }
+const Menu = { template: `
+<transition name="delicious">
+<div>Today: invisible cookies!</div>
+</transition>
+`}
+
+Vue.use(VueRouter)
+const router = new VueRouter({
+  routes: [{
+      path: '/',
+      component: Home
+    },
+    {
+      path: '/menu',
+      component: Menu
+    }
+  ]
+})
+
+new Vue({
+  router,
+  el: '#app'
+})
+--------------------------------------------
+.spooky-enter-active,
+.spooky-leave-active {
+  transition: opacity .5s;
+  position: absolute
+}
+
+.spooky-enter,
+.spooky-leave-active {
+  opacity: 0
+}
+
+.delicious-enter-active,
+.delicious-leave-active {
+  transition: all .5s;
+  position: absolute
+}
+
+.delicious-enter {
+  transform: rotate(360deg);
+  opacity: 0
+}
+
+.delicious-leave-active {
+  transform: rotate(360deg);
+  opacity: 0
+}
+
+URL:https://jsfiddle.net/packt/wjyvd1sf/
