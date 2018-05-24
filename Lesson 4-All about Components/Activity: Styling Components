@@ -1,0 +1,26 @@
+HTML Section  
+
+<div id="app">
+  <pinker text="hello"></pinker>
+  <pinker text="world"></pinker>
+</div>
+
+------------------------------
+JavaScript + Vue Section 
+
+Vue.component('pinker', {
+  props: {
+    text: String
+  },
+  template: ` 
+    <div class="pinker"> 
+      <p>{{text}}</p> 
+    </div> 
+  `
+})
+new Vue({
+  el: '#app'
+})
+
+
+URL:https://jsfiddle.net/packt/ywpxau25/
