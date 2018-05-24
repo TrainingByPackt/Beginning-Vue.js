@@ -1,0 +1,24 @@
+HTML Section  
+
+<div id="app">
+<h1>Parrot pages</h1>
+<router-view class="view"></router-view>
+</div>
+
+----------------------------------------
+JavaScript + Vue Section 
+
+Vue.use(VueRouter);
+ 
+const Parrot = { template: '<p>{{$route.params.text}}</p>'}
+ 
+const router = new VueRouter({
+  routes: [{ path: "/parrot/:text", component: Parrot }]
+});
+ 
+new Vue({
+  router,
+  el: "#app"
+});
+
+URL: https://jsfiddle.net/packt/hbL10fyv/
