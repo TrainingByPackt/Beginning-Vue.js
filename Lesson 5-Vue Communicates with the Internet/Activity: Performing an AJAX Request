@@ -1,0 +1,35 @@
+HTML Section  
+
+<div id="app">
+  <h2>The current temperature.</h2>
+  <p>{{temp | temp}}</p>
+</div>
+
+-------------------------------------
+JavaScript + Vue Section 
+
+Vue.filter('temp', (num) => {
+	if (isNaN(num)) return num
+  else return Math.trunc(num) + '℃'
+})
+new Vue({
+      el: '#app',
+      data: {
+        temp: 'loading...'
+      },
+      created() {
+        axios.get('https://cors.now.sh/https://www.metaweather.com/api/location/615702/', {
+            timeout: 30000
+          })
+          .then(response => {
+            this.temp = response.data.consolidated_weather[0].the_temp
+          })
+          .catch(error => {
+            this.temp = 'There was an error: ' + error.message
+          })
+      }
+    }
+)
+
+
+URL:https://jsfiddle.net/packt/8u87gwc2/
