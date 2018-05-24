@@ -1,0 +1,22 @@
+HTML Section  
+
+<div id="app"> 
+
+</div> 
+------------------------------
+JavaScript + Vue Section 
+
+new Vue({ 
+  el: '#app', 
+  created () { 
+    axios.interceptors.response.use(config => { 
+      const error = config.data.error 
+      if (error !== undefined) { 
+        alert(error) 
+      } 
+    }) 
+  axios.get('http://echo.jsontest.com/error/server-is-sleeping') 
+  } 
+}) 
+
+URL:http://jsfiddle.net/packt/8mo7Lcnp/
