@@ -1,0 +1,53 @@
+HTML Section  
+
+<div id="app">
+  <h1>Clothes for Humans</h1>
+  <ul>
+    <li>
+      <router-link to="/">Home</router-link>
+    </li>
+    <li>
+      <router-link to="/clothes">Clothes</router-link>
+    </li>
+  </ul>
+  <router-view></router-view>
+</div>
+---------------------------------------------------------
+
+JavaScript + Vue Section 
+
+Vue.use(VueRouter)
+
+const Home = {
+  template: '<div>Welcome to Clothes for Humans</div>'
+}
+const Clothes = {
+  template: '<div>Today we have shoes</div>'
+}
+const Sales = {
+  template: '<div>Up to 50% discounts! Buy!</div>'
+}
+
+const router = new VueRouter({
+  routes: [{
+      path: '/',
+      component: Home
+    },
+    {
+      path: '/clothes',
+      component: Clothes
+    },
+    {
+      path: '/last-year-sales',
+      component: Sales
+    }
+  ]
+})
+
+new Vue({
+  router,
+  el: '#app'
+})
+
+
+URL:https://jsfiddle.net/packt/rhwyj0mm/
