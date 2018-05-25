@@ -1,0 +1,32 @@
+HTML Section  
+
+<div id="app">
+  <child v-for="i in 10" ref="junior" :num="i" :key="i"></child>
+  <p>Truth for child 4: {{child4Stomach}}</p>
+</div>
+
+------------------------------
+Vue Section+No Library(pure js)
+
+Vue.component('child', {
+  template: "<p>Child {{num}}: {{mouth}}</p>",
+  props: ['num'],
+  data() {
+    return {
+      mouth: 'I didn’t eat that cookie',
+      stomach: `Yummy that cookie was ${this.num} times more delicious.`
+    }
+  }
+})
+
+new Vue({
+  el: '#app',
+  data: {
+    child4Stomach: 'unknown'
+  },
+  mounted() {
+    this.child4Stomach = this.$refs.junior[3].stomach
+  }
+})
+
+URL:https://jsfiddle.net/packt/v2n3kec8/
