@@ -1,0 +1,38 @@
+HTML Section  
+
+<div id="app">
+  <container>
+  </container>
+</div>
+
+------------------------------
+Vue Section+No Library(pure js)
+
+Vue.component('heading', { 
+  template: ` 
+    <div class="heading"> 
+      Title 
+    </div> 
+  ` 
+  })
+Vue.component('sidebar', { 
+  template: ` 
+    <div class="sidebar"> 
+      Sidebar 
+    </div> 
+  ` 
+}) 
+Vue.component('container', { 
+  template: ` 
+    <div class="content"> 
+      <heading class="heading"></heading> 
+      <sidebar class="sidebar"></sidebar> 
+        Some content
+    </div> 
+  ` 
+  })
+new Vue({ 
+  el: '#app' 
+})
+
+URL:https://jsfiddle.net/packt/8owt98f8/
