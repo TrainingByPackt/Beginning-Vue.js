@@ -35,4 +35,20 @@ new Vue({
   el: '#app' 
 })
 
+---------------------------
+CSS Section
+
+.heading {
+  font-size: large
+}
+
+.sidebar {
+  float: left;
+  margin-right: 1em;
+}
+
+.content {
+  background-color: lightyellow
+}
+
 URL:https://jsfiddle.net/packt/8owt98f8/
