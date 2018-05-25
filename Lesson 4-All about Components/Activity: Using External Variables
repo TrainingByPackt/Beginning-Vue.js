@@ -1,0 +1,44 @@
+HTML Section  
+
+<div id="app"> 
+  <input @input="setVariable"/> 
+  <comp></comp> 
+  <comp></comp> 
+</div> 
+
+------------------------------
+JavaScript + Vue Section 
+
+let variable = ''
+
+Vue.component('comp', { 
+  template: ` 
+    <div> 
+      <button @click="print"> 
+        print 
+      </button> 
+      {{text}} 
+    </div> 
+  `, 
+  data () { 
+    return { 
+      text: '' 
+    } 
+  }, 
+  methods: { 
+    print () { 
+      this.text = variable 
+    } 
+  } 
+}) 
+
+new Vue({ 
+  el: '#app', 
+  methods: { 
+    setVariable (e) { 
+      variable = e.target.value 
+    } 
+  } 
+}) 
+
+URL:https://jsfiddle.net/packt/x3xw3yg6/
