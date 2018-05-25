@@ -4,7 +4,9 @@ HTML Section
  <person :titles="companyTitles"></person> 
 </div> 
 `
-------------------------------Vue Section+No Library(pure js) 
+------------------------------
+Vue Section+No Library(pure js) 
+
 Vue.component('person', { 
   props: { 
     titles: Array, 
