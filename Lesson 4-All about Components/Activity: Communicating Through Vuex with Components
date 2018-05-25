@@ -1,0 +1,47 @@
+HTML Section  
+
+<div id="app">
+  <input @keyup.enter="add" />
+  <inventory></inventory>
+</div>
+
+------------------------------
+Vue Section+No Library(pure js)
+
+const store = new Vuex.Store({
+  state: {
+    fruits: ['banana']
+  },
+  mutations: {
+    addFruit(state, fruit) {
+      state.fruits.push(fruit)
+    }
+  }
+})
+
+Vue.component('inventory', {
+  template: ` 
+    <div> 
+      <ul> 
+        <li v-for="fruit in fruits">{{fruit}}</li> 
+      </ul> 
+    </div> 
+  `,
+  data() {
+    return {
+      fruits: store.state.fruits
+    }
+  }
+})
+
+new Vue({
+  el: '#app',
+  methods: {
+    add(e) {
+      store.commit('addFruit', e.target.value)
+    }
+  }
+})
+
+
+URL:https://jsfiddle.net/packt/wu5oq6wy/
