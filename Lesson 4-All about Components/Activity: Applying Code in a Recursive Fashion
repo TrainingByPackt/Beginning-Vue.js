@@ -1,0 +1,47 @@
+HTML Section  
+
+<div id="app"> 
+ <person :titles="companyTitles"></person> 
+</div> 
+`
+------------------------------Vue Section+No Library(pure js) 
+Vue.component('person', { 
+  props: { 
+    titles: Array, 
+    levelOfRecursion: { 
+      type: Number, 
+      default () { return 0 } 
+    } 
+  }, 
+  template: ` 
+  <p>
+  	<span v-for="i in levelOfRecursion" class="indent">
+    	&nbsp;&nbsp
+    </span>
+  	{{titles[levelOfRecursion]}}  
+    <span v-if="levelOfRecursion < titles.length - 1"> 
+      supervises 
+    </span>
+    <person  
+      v-if="levelOfRecursion < titles.length - 1" 
+      :titles="titles" 
+      :levelOfRecursion="levelOfRecursion+1" 
+    /> 
+  </p> 
+  ` 
+}) 
+
+new Vue({ 
+  el: '#app', 
+  data: { 
+    companyTitles: [ 
+      'CEO', 
+      'VP of Engineering', 
+      'Lead Engineer', 
+      'Team Leader' 
+    ] 
+  } 
+}) 
+
+
+URL:https://jsfiddle.net/packt/r4rmpdze/
