@@ -1,0 +1,40 @@
+HTML Section  
+
+<div id="app">
+  <ad link="https://buyasock.com">
+    <p slot="copy">
+      You need another sock, to complete your pair.
+    </p>
+    <span slot="callToAction"> 
+     Buy Sock! 
+   </span>
+  </ad>
+</div>
+
+------------------------------
+Vue Section+No Library(pure js)
+
+Vue.component('ad', { 
+  props: { 
+    link: String 
+  }, 
+  template: ` 
+    <div class="ad"> 
+      <slot name="copy"></slot> 
+      </p> 
+      <button @click="goTo(link)"> 
+        <slot name="callToAction"></slot> 
+      </button> 
+    </div> 
+  `, 
+  methods: { 
+    goTo(link) { 
+      window.location.href = link 
+    } 
+  } 
+})
+new Vue({ 
+  el: '#app' 
+}) 
+
+URL:https://jsfiddle.net/packt/57ftdxce/
