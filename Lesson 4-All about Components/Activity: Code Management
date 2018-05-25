@@ -1,0 +1,17 @@
+HTML Section  
+
+<div id="app"> 
+ <failure></failure> 
+</div> 
+------------------------------
+Vue Section+No Library(pure js)
+
+Vue.component('failure', (succeed, fail) => { 
+  fail('sorry not sorry') 
+}) 
+
+new Vue({ 
+  el: '#app' 
+}) 
+
+URL:https://jsfiddle.net/packt/n9vuerbc/
