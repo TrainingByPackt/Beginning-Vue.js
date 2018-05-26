@@ -21,4 +21,4 @@ const vm = new Vue({
 setTimeout(() => vm.newCommentShow = true, 3000) 
 
 
-https://jsfiddle.net/gurghet/u8rraw7r/
+URL: https://jsfiddle.net/packt/svuvL5c1/
