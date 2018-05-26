@@ -1,0 +1,52 @@
+HTML Section
+
+<div id="app">
+  <h3>Syllabus</h3>
+  <transition-group tag="ul">
+    <li v-for="topic in syllabus" :key="topic">
+      <button @click="completed(topic)">Done</button>{{topic}}
+    </li>
+  </transition-group>
+</div>
+
+-------------------------
+JavaScript+Vue Section
+
+new Vue({
+  el: '#app',
+  data: {
+    syllabus: [
+      'HTML',
+      'CSS',
+      'Scratch',
+      'JavaScript',
+      'Python'
+    ]
+  },
+  methods: {
+    completed(topic) {
+      let index = this.syllabus.indexOf(topic)
+      this.syllabus.splice(index, 1)
+    }
+  }
+})
+
+--------------------------
+CSS Section
+
+.v-leave-active {
+  transition: all 1s;
+  opacity: 0;
+  transform: translateY(-30px);
+  /*???*/
+}
+
+.v-enter {
+  transform: translateX(30px);
+}
+
+.v-enter-active {
+  transition: all 1s;
+}
+
+URL:https://jsfiddle.net/packt/qy3wyy54/
