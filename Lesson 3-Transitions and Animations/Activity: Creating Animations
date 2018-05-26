@@ -1,0 +1,44 @@
+HTML Section
+
+<div id="app"> 
+  <button @click="peek = true"> 
+    Peek 
+  </button> 
+  <button @click="peek = false"> 
+    a-boo 
+  </button> 
+  <transition  
+    ???> 
+    <p v-if="peek">🐵</p> 
+  </transition> 
+</div> 
+-------------------------------------
+JS +Vue
+
+new Vue({
+  el: '#app',
+  data: {
+    peek: false
+  }
+})
+
+-----------------------------
+CSS
+.slideInRight { 
+  transform: translateX(200px); 
+} 
+.come { 
+  transition: all .5s ease-out; 
+} 
+.slideOutLeft { 
+  transform: translateX(200px); 
+  transition: all .5s ease-in; 
+} 
+.leave { 
+  transform: translateX(0px); 
+}
+p {
+  font-size: 3em
+}
+
+URL:https://jsfiddle.net/packt/khkb2zzt/
