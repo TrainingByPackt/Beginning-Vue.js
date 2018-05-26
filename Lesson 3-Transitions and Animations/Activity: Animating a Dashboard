@@ -1,0 +1,48 @@
+HTML Section
+
+<div id="app">
+  <input type="number" @input="setRevenues">
+  <h4>
+    We are making this much money: {{euros}}
+  </h4>
+  <div class="bar" :style="'height: ' + euros + 'px'"></div>
+</div>
+
+-------------------------
+JavaScript+Vue Section
+
+new Vue({ 
+  el: '#app', 
+  data: { 
+    euros: 0 
+  }, 
+  methods: { 
+    setRevenues(event) { 
+      const newRevenues = Number(event.target.value) 
+      const _this = this 
+      const animate = (time) => { 
+        requestAnimationFrame(animate) 
+        TWEEN.update(time) 
+      }
+      requestAnimationFrame(animate) 
+      new TWEEN.Tween({R: this.euros}) 
+        .to({R: newRevenues}, 1000) 
+        .onUpdate(function() { 
+          _this.euros = this.R 
+        }) 
+        .start() 
+    } 
+  } 
+}) 
+--------------------------
+CSS Section
+
+.bar {
+  width: 3em;
+  background-color: red;
+  position: absolute;
+  bottom: 3em;
+  left: 15em
+}
+
+URL:https://jsfiddle.net/packt/yp5gam67/
