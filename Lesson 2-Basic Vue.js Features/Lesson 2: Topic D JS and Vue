@@ -1,8 +1,0 @@
-Vue.filter('currency', function(money) {
-  return accounting.formatMoney(money)
-})
-new Vue({
-  el: '#app'
-})
-
-https://jsfiddle.net/gurghet/p5mq6dwo/
