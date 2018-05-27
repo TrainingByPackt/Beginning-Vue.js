@@ -1,0 +1,18 @@
+HTML Section
+
+<div id="app">
+  I have {{5 | currency}} in my pocket
+</div>
+
+----------------------------
+JavaScript+Vue Section
+
+Vue.filter('currency', function(money) {
+  return accounting.formatMoney(money)
+})
+new Vue({
+  el: '#app'
+})
+
+----------------------------
+URL: https://jsfiddle.net/packt/sunqLkf8/
