@@ -1,8 +1,0 @@
-<div id='app'> 
-  <button @click="bullets++"> 
-    Add Bullet To List 
-  </button> 
-  <ul> 
-    <li v-for="number in bullets">{{myProperty}}</li> 
-  </ul> 
-</div> 
