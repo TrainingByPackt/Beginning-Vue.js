@@ -1,0 +1,43 @@
+HTML Section
+
+<div id="app">
+  <label>Kelvin: 
+    <input v-model="kelvin" type="range" min="0" max="1000"> 
+  </label>
+  <br>
+  <label>Celsius: 
+    <input @input="updateCelsius" :value="celsius"> 
+  </label>
+  <br>
+  <output>
+    The temperature is {{kelvin}}K ({{celsius}}C) 
+  </output>
+</div>
+
+----------------------------
+JavaScript+Vue Section
+
+new Vue({
+   el: '#app',
+   data: {
+     kelvin: 0
+   },
+   computed: {
+     celsius: {
+       get() {
+         return this.kelvin - 273
+       },
+       set(newCelsius) {
+         this.kelvin = newCelsius + 273
+       }
+     }
+   },
+   methods: {
+     updateCelsius(e) {
+       this.celsius = Number(e.target.value)
+     }
+   }
+ })
+
+----------------------------
+URL: https://jsfiddle.net/packt/y1vgfeag/
