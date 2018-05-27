@@ -1,3 +1,0 @@
-<div id="app"> 
-The Storming of the Bastille, happened on {{bastilleStormingDate | date}} 
-</div> 
