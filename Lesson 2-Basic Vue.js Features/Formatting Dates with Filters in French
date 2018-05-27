@@ -1,0 +1,21 @@
+HTML Section
+
+<div id="app"> 
+La prise de la Bastille, survenue le {{bastilleStormingDate | date}}
+</div> 
+----------------------------
+JavaScript+Vue Section
+
+Vue.filter('date', function (date) { 
+  moment.locale('fr') 
+  return moment(date).format('LL') 
+}) 
+new Vue({
+  el: '#app',
+  data: {
+    bastilleStormingDate: '1789-07-14 17'
+  }
+})
+
+----------------------------
+URL: https://jsfiddle.net/gurghet/t6s40zbd/
