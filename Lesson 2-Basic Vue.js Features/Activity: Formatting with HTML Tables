@@ -1,0 +1,46 @@
+HTML Section
+
+<div id="app">
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item in inventory">
+        <td>{{item.name}}</td>
+        <td class="price">{{item.price | dollars}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+----------------------------
+JavaScript+Vue Section
+
+Vue.filter('dollars', function (money) { 
+  return accounting.formatMoney(money) 
+}) 
+new Vue({ 
+  el:'#app', 
+  data: { 
+    inventory: [ 
+      {name: 'tape measure', price: '7'}, 
+      {name: 'stamp', price: '0.01'}, 
+      {name: 'shark tooth', price: '1.5'}, 
+      {name: 'iphone', price: '999'} 
+    ] 
+  } 
+}) 
+
+----------------------------
+CSS Section
+
+.price { 
+  text-align: right 
+} 
+----------------------------
+URL: https://jsfiddle.net/packt/d20xhpz4/
