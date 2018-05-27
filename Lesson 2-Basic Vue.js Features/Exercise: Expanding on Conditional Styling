@@ -1,0 +1,25 @@
+HTML Section
+
+<div id="app"> 
+  <input v-model="text"/> 
+  <h4 :class="classes"> 
+    {{text}} 
+  </h4> 
+</div> 
+----------------------------
+JavaScript+Vue Section
+
+new Vue({ 
+  el: '#app', 
+  data: { 
+    text: '' 
+  }, 
+  computed: { 
+    classes () { 
+      const glowing = this.text.includes('fire') 
+      return { glowing } 
+    } 
+  } 
+}) 
+----------------------------
+URL: https://jsfiddle.net/packt/hz06dt22/
