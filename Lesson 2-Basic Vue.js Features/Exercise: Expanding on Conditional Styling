@@ -22,4 +22,10 @@ new Vue({
   } 
 }) 
 ----------------------------
+CSS Section
+.glowing { 
+  text-shadow: 0 0 3px #FF0000; 
+} 
+
+----------------------------
 URL: https://jsfiddle.net/packt/hz06dt22/
