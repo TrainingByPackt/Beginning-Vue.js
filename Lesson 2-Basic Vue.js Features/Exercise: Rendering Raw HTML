@@ -1,0 +1,21 @@
+
+HTML Section
+
+<div id="app">
+  <input v-model="rawHtml" /><br/>
+  <span v-html="rawHtml"> 
+</span>
+</div>
+
+----------------------------
+JavaScript+Vue Section
+
+new Vue({
+  el: '#app',
+  data: {
+    rawHtml: ''
+  }
+})
+
+----------------------------
+URL: https://jsfiddle.net/packt/wvtfy6su/
