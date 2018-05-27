@@ -1,0 +1,28 @@
+HTML Section
+
+<div id="app"> 
+  <h3>List of expensive experiments</h3> 
+  <ul> 
+    <li v-for="exp in experiments"> 
+      {{exp.name}} ({{exp.cost}}m ) 
+    </li> 
+  </ul> 
+</div> 
+----------------------------
+JavaScript+Vue Section
+
+new Vue({ 
+  el: "#app", 
+  data: { 
+    experiments: [ 
+      {name: 'RHIC Ion Collider', cost: 650, field: 'Physics'}, 
+      {name: 'Neptune Undersea Observatory', cost: 100, field: 'Biology'}, 
+      {name: 'Violinist in the Metro', cost: 3, field: 'Psychology'}, 
+      {name: 'Large Hadron Collider', cost: 7700, field: 'Physics'}, 
+      {name: 'DIY Particle Detector', cost: 0, field: 'Physics'} 
+    ] 
+  } 
+}) 
+----------------------------
+URL: https://jsfiddle.net/packt/sbo7xnko/
+
