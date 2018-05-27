@@ -1,0 +1,29 @@
+HTML Section
+
+<div id="app">
+  <h4>
+    Fight Club: the best soap bars shop
+  </h4>
+  <div class="promo" v-show="show">
+    Promotional content!
+  </div>
+  <div>
+    Some regular content
+  </div>
+</div>
+
+----------------------------
+JavaScript+Vue Section
+
+let vm = new Vue({
+  el: '#app',
+  data: {
+    show: false
+  }
+})
+
+
+setTimeout(() => vm.show = true, 3000)
+
+----------------------------
+URL: https://jsfiddle.net/packt/anavb94x/
