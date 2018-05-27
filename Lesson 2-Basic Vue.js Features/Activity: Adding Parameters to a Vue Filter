@@ -1,0 +1,20 @@
+HTML Section
+
+<div id="app">
+La prise de la Bastille, survenue le ...
+</div>
+
+----------------------------
+JavaScript+Vue Section
+
+Vue.filter('date', /* missing code */
+})
+new Vue({
+  el: '#app',
+  data: {
+    bastilleStormingDate: '1789-07-14 17'
+  }
+})
+
+----------------------------
+URL: https://jsfiddle.net/packt/7e2ve074/
