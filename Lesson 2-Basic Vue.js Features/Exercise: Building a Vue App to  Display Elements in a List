@@ -1,0 +1,27 @@
+HTML Section
+
+<div id='app'> 
+  <button @click="bullets++"> 
+    Add Bullet To List 
+  </button> 
+  <ul> 
+    <li v-for="number in bullets">{{myProperty}}</li> 
+  </ul> 
+</div> 
+----------------------------
+JavaScript+Vue Section
+
+new Vue({ 
+  el: '#app', 
+  data: { 
+    bullets: 0 
+  }, 
+  computed: { 
+    myProperty () { 
+      alert('hi') 
+      return 'new Bullet' 
+    } 
+  } 
+}) 
+----------------------------
+URL: https://jsfiddle.net/packt/c2o5k6ej/
