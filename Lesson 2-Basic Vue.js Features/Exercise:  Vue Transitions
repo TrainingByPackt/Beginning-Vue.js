@@ -1,0 +1,36 @@
+HTML Section
+
+<div id="app">
+  <p>
+    Transitions are awesome, careful<br/> please don't use them always.
+  </p>
+  <transition name="fade">
+    <img id="tree" src=http://i.imgur.com/QDpnaIE.png v-show="show" @click="show = false" />
+  </transition>
+</div>
+
+----------------------------
+JavaScript+Vue Section
+
+new Vue({
+  el: '#app',
+  data: {
+    show: true
+  }
+})
+------------------------
+CSS Section
+#tree {
+  position: absolute;
+  left: 7.5em;
+  top: 0em;
+  cursor: pointer;
+}
+
+.fade-leave-active {
+  transition: opacity .5s;
+  opacity: 0
+}
+
+------------------------
+URL: https://jsfiddle.net/packt/7g95j0qo/
