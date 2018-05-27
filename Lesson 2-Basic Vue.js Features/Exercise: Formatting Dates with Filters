@@ -1,0 +1,20 @@
+HTML Section
+
+<div id="app"> 
+The Storming of the Bastille, happened on {{bastilleStormingDate | date}} 
+</div> 
+----------------------------
+JavaScript+Vue Section
+
+Vue.filter('date', function (date) { 
+  return moment(date).format('LL') 
+}) 
+new Vue({
+  el: '#app',
+  data: {
+    bastilleStormingDate: '1789-07-14 17'
+  }
+})
+
+----------------------------
+URL: https://jsfiddle.net/packt/nn33hwew/
