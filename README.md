@@ -5,7 +5,7 @@
 
 
 
-# Beginning Application Development with TensorFlow and Keras
+# Beginning Vue.js
 This course starts with the basics, such as lists and filters, and then progresses to advanced features like using Jasmine for testing Vue.js and creating universal applications with Electron. By the end of the course, you will also know how to integrate the Vue.js framework with others.
 
 
